@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+:root{
+  /* Background Bolors */
+  --primary: #007BFF;
+  --secondary: #FFFFFF;
+  --accent: #FF5722;
+  --background: #F5F5F5;
+  --sidebar:  #AAAAAA;
+
+  /* Text Colors */
+  --primary-text-color: #333333;
+  --secondary-text-color: #777777;
+  --accent-text-color:#FF5722;
+  --link-text-color: #007BFF;
+
+  /* Fonts */
+  --heading-font: "Playfair Display", serif;
+  --body-font: "Roboto", sans-serif;
+  --alternate-heading-font: "Montserrat", sans-serif;
+  --alternate-body-font: "Lato", sans-serif;
+}
+body {
+  margin: 0;
+  font-family: var(--body-font);
+}
+/* Nav Bar */
+nav{
+  width: 100%;
+  height: 50px;
+  position: sticky;
+  top:0;
+  z-index: 100;
+  background: var(--secondary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+.logo{
+  font-family: var(--heading-font);
+  color: var(--primary-text-color);
+  font-style: italic;
+  font-weight: 900;
+  margin: 0 50% 0 0;
+  cursor:default ;
+}
+.nav-btn{
+  text-decoration: none;
+  color: var(--secondary-text-color);
+  margin: 0 20px;
+  font: 20px var(--alternate-heading-font);
+  position:relative;
+}
+.nav-btn::after{
+  content: '';
+  height: 2px;
+  width: 0;
+  background-color: var(--secondary-text-color);
+  position: absolute;
+  left:0;
+  bottom:-8px;
+  transition: all 0.4s;
+  pointer-events:none;
+}
+.nav-btn:hover::after, .nav-btn:focus::after{ width: 100%; }
+.logout{
+  all: unset;
+  cursor: pointer;
+  background: #606060;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 50px;
+}
+/* End of Nav Bar */
+
+/* Header */
+.headerCard{
+  width: 80%;
+  margin: 10px auto;
+  background: var(--background);
+}
+
+.headerCard p{
+  color: var(--secondary-text-color);
+  font-size: 25px;
+}
+/* End of Header */
+
+/* Login Page */
+.login-page{
+  width: 100%;
+  height: calc(100vh - 250px);
+  display: flex;
+  flex-direction: column;
+  margin-top: 5%;
+  align-items: center;
+}
+
+.googleContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login-comp{
+  width: fit-content;
+  height: fit-content;
+
+}
+
+.createPostPage{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top:20px;
+  
+}
+.cpContainer{
+  background: #999999;
+  height:100vh;
+  border-radius: 20px;
+  width: 100%;
+}
+.topComp{
+  display: flex;
+  flex-flow: row wrap;
+}
+.cpContainer .cTitle, .cHeadline{
+  width: 90%;
+  outline: none;
+}
+.p-inputtextarea{
+  width: 100%;
+  height: 700px;
+}
+
+.loginForm{
+  display: flex;
+  flex-direction: column;
+
+}
+#email, #password, #confirm, #firstname, #lastname, #contactNum, #address{
+  margin: 20px 0;
+}
+.normalLoginButton{
+  cursor: pointer;
+  padding: 5px 16px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.25);
+  color: #757575;
+  font-size: 20px;
+  font-weight: 500;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: 12px 11px;
+  display: flex;
+
+  justify-content: center;
+}
+/* End of Login Page */
+
+/* Create Account Page */
+.createAccountContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.createAccountForm {
+  width: 500px;
+}
+
+.createNewAccount {
+  padding: 20px;
+}
+
+.createNewAccount label {
+  display: inline-block; 
+  width: 35%; 
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+
+.submitcontainer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.submit {
+  width: 150px;
+}
+
+/* End of Create Account Page*/
+.inputGroup{
+  display: flex;
+  flex-direction: column;
+  margin: 1%;
+}
+
+.title{
+  width: 100%;
+  padding: 12px 20px;
+  outline: none;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+}
+
+.post{
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+  overflow: hidden;
+}
+
+.submit{
+  all:unset;
+  padding: 10px;
+  border-radius: 10px;
+  color:white;
+  background: #333333;
+  margin: 10% 0 0 82%;
+  outline: none;
+  cursor: pointer;
+  justify-self: flex-end;
+}
+
+.homepage{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+.cardContainer{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns */
+  gap: 10px;
+  width: 80vw;
+  margin-top: 20px;
+}
+
+.postCard{
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 20px 0;
+  height: 300px;
+  position: relative;
+}
+.cardFooter {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+}
+
+.deleteBtn{
+  border: none;
+  cursor: pointer;
+}
+.divMargin{
+  display: flex;
+  margin-bottom: 20%;
+}
+.titles{
+  margin: 0 70% 0 0;
+}
+
+.menuBtn {
+  background-color: transparent;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.postHeader{
+  display: flex;
+}
+
+.viewPostPage {
+  display: flex;
+  width: calc(100% - 300px);
+  margin-left: 300px;
+}
+
+.sidebar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 10px 0px 6px -5px rgba(0, 0, 0, 0.1);
+  padding: 5% 0;
+}
+
+
+
+.postMenu{
+  display: inline-block;
+}
+
+.postContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  width: 100%;
+}
+
+.postHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.postHeader h1 {
+  margin: 0;
+  flex-grow: 1;
+}
+
+.postDate {
+  margin-top: 10px;
+  color: var(--secondary-text-color);
+}
+
+.spacer{
+  flex:1;
+}
