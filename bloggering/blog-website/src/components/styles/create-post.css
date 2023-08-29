@@ -1,0 +1,91 @@
+
+.cpContainer {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    background-color: var(--secondary);
+  }
+  
+  .topComp {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .cTitle,
+  .cHeadline {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  .publishButton {
+    background-color: var(--primary);
+    color: var(--secondary);
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .publishButton:hover {
+    background-color: var(--accent);
+    color: var(--secondary);
+  }
+  
+  .postTextArea {
+    margin-top: 20px;
+  }
+  
+  .postTextArea.p-textarea {
+    width: 100%;
+    border: 1px solid var(--primary);
+    border-radius: 5px;
+    padding: 10px;
+    height: 100%;
+
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .cpContainer {
+      max-width: 80%;
+    }
+  }
+  
+  @media (min-width: 1025px) and (max-width: 1440px) {
+    .cpContainer {
+      max-width: 70%;
+    }
+  }
+  
+  @media (min-width: 1441px) {
+    .cpContainer {
+      max-width: 60%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .cpContainer {
+      max-width: 90%;
+    }
+  
+    .topComp {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .cTitle,
+    .cHeadline {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  
+    .publishButton {
+      width: 100%;
+    }
+  }
+  

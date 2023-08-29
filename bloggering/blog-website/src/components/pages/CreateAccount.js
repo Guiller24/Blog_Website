@@ -4,7 +4,7 @@ import { Toast } from 'primereact/toast';
 import React, { useEffect, useRef, useState } from 'react';
 import userService from '../api/js-api/userService';
 import { useCustomNavigate } from '../navigation/CustomNavigate';
-import '../styles/create-account.css';
+
 export const CreateAccount = () => {
     const [ firstName, setFirstName ] = useState("");
     const [ lastName, setLastName ] = useState("");
@@ -56,25 +56,25 @@ export const CreateAccount = () => {
         <form className="form" onSubmit={createUser}>
             <p className="form-title">Create a new account</p>
             <div className="input-container">
-                <InputText className='p-inputtext-lg' placeholder='First Name...' value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+                <InputText className='p-inputtext-lg' placeholder='First Name...' value={firstName} onChange={(e) => setFirstName(e.target.value)} required/>
             </div>
             <div className="input-container">
-                <InputText className='p-inputtext-lg' placeholder='Last Name...' value={lastName} onChange={(e) => setLastName(e.target.value)} />
+                <InputText className='p-inputtext-lg' placeholder='Last Name...' value={lastName} onChange={(e) => setLastName(e.target.value)} required/>
             </div>
             <div className="input-container">
-                <InputText className='p-inputtext-lg' placeholder='Email...' value={email} onChange={(e) => setEmail(e.target.value)} />
+                <InputText className='p-inputtext-lg' placeholder='Email...' value={email} onChange={(e) => setEmail(e.target.value)} required/>
             </div>
             <div className="input-container">
-                <InputText className='p-inputtext-lg' placeholder='Contact Number' value={contactNum} onChange={(e) => setContactNum(e.target.value)} />
+                <InputText className='p-inputtext-lg' placeholder='Contact Number' value={contactNum} onChange={(e) => setContactNum(e.target.value)} required/>
             </div>
             <div className="input-container">
-                <InputText className='p-inputtext-lg' placeholder='Address' value={address} onChange={(e) => setAddress(e.target.value)} />
+                <InputText className='p-inputtext-lg' placeholder='Address' value={address} onChange={(e) => setAddress(e.target.value)} required/>
             </div>
             <div className="input-container">
-                <Password className='p-inputtext-lg' placeholder='Password...' value={password} onChange={(e) => setPassword(e.target.value)} />
+                <Password className='p-inputtext-lg' placeholder='Password...' value={password} onChange={(e) => setPassword(e.target.value)} required/>
             </div>
             <div className="input-container">
-                <Password className='p-inputtext-lg' placeholder='Confirm password...' value={confirm} onChange={(e) => setConfirm(e.target.value)} />
+                <Password className='p-inputtext-lg' placeholder='Confirm password...' value={confirm} onChange={(e) => setConfirm(e.target.value)} required/>
             </div>
             <button type="submit" class="submit">Sign up</button>
             <p className="signup-link">

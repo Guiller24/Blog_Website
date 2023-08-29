@@ -3,7 +3,6 @@ import { Password } from 'primereact/password';
 import React, { useEffect, useState } from 'react';
 import AuthenticateUser from "../api/js-api/AuthenticateUser";
 import { useCustomNavigate } from "../navigation/CustomNavigate";
-import '../styles/login.css';
 
 function Login({ isAuth, setIsAuth }) {
 
@@ -40,10 +39,10 @@ function Login({ isAuth, setIsAuth }) {
         <form className="form" onSubmit={handleLogin}>
             <p className="form-title">Sign in to your account</p>
             <div className="input-container">
-                <InputText className='p-inputtext-lg' placeholder='Email...' value={email} onChange={(e) => setEmail(e.target.value)} />
+                <InputText className='p-inputtext-lg' placeholder='Email...' value={email} onChange={(e) => setEmail(e.target.value)} required/>
             </div>
             <div className="input-container">
-                <Password className='p-inputtext-lg' placeholder='Password...' value={password} onChange={(e) => setPassword(e.target.value)} />
+                <Password className='p-inputtext-lg' placeholder='Password...' value={password} onChange={(e) => setPassword(e.target.value)} required/>
             </div>
             <button type="submit" class="submit">Sign in</button>
             <p className="signup-link">
