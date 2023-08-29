@@ -1,0 +1,101 @@
+/* view-post.css */
+.viewPostPage {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .sidebar {
+    background-color: var(--primary);
+    height: calc(100vh - 60px);
+    color: var(--secondary);
+    padding: 20px;
+    border-radius: 5px;
+    flex: 1;
+    z-index: 99;
+  }
+  
+  .sidebar h3 {
+    font-family: var(--alternate-heading-font);
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  
+  .sidebar h2 {
+    font-family: var(--alternate-heading-font);
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
+  
+  .sidebar p {
+    font-family: var(--alternate-body-font);
+    margin: 0;
+    color: var(-background);
+  }
+  
+  .postContainer {
+    background-color: var(--secondary);
+    color: var(--primary-text-color);
+    padding: 20px;
+    border-radius: 5px;
+    flex: 2;
+  }
+  
+  .postHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    height: 50px;
+}
+
+.postHeaderContent {
+    display: flex;
+    align-items: center;
+}
+
+.postHeader h1 {
+    font-family: var(--heading-font);
+    font-size: 2.5rem;
+    margin: 0;
+    margin-right: 10px;
+}
+
+.postMenu {
+    display: flex;
+    margin-right: 0;
+    height: 20px;
+}
+.card{
+    height: 20px
+}
+
+  .postMenu button {
+    background-color: var(--primary);
+    color: var(--secondary);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--alternate-body-font);
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .postMenu button:hover {
+    background-color: var(--accent);
+    color: var(--secondary);
+  }
+  
+  h3 {
+    font-family: var(--heading-font);
+    font-size: 1.8rem;
+    margin-top: 20px;
+  }
+  
+  p {
+    font-family: var(--body-font);
+    line-height: 1.6;
+    margin-top: 10px;
+  }
+  

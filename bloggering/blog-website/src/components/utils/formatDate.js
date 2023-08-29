@@ -16,7 +16,7 @@ function formatDate(timestamp) {
       return `${hours} hours ago`;
     } else if (seconds < 604800) {
       const days = Math.floor(seconds / 86400);
-      return `${days} days ago`;
+      return `${days} day(s) ago`;
     } else if (seconds < 2592000) {
       const weeks = Math.floor(seconds / 604800);
       return `${weeks} weeks ago`;

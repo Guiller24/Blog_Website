@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import postService from '../api/js-api/postService';
-import formatDate from '../utils/formatDate';
-import Header from '../common/Header';
-import jwtDecode from 'jwt-decode';
-import { Card } from 'primereact/card';
-import { Divider } from 'primereact/divider';
-import { Button } from 'primereact/button';
 import { useCustomNavigate } from '../navigation/CustomNavigate';
+import { Header } from '../common/Header';
 
 function Home({ isAuth }) {
   const [ postList, setPostList ] = useState([]);
@@ -32,24 +27,25 @@ function Home({ isAuth }) {
   return (
     
     <div className="homepage">
-      <Header/>
+      <div className="header-container">
+      <Header />
+      </div>
       <div className='cardContainer'>
         {postList.map((post) => {
-          
-          
           return (
-            <Card key={post.postId}
-                  title={<>{post.title}<Divider className='divMargin'/></>}
-                  subTitle={post.headline}
-                  className="postCard">
-            <div className='cardFooter'>
-              <Button label="See Post"
-                      severity="secondary"
-                      icon="pi pi-arrow-right"
-                      iconPos="right"
-                      text onClick={() =>viewPage(post.postId)}/> 
-            </div>
-            </Card>
+            <div class="card" key={post.postId}>
+              <div class="image"></div>
+                <div class="content">
+                  <span class="title">{post.title}</span>
+                  <p class="headline">{post.headline}</p>
+                  <div className="bottom">
+                  <a class="action" onClick={() => viewPage(post.postId)}>
+                    Find out more
+                    <span aria-hidden="true">  →</span>
+                  </a>
+                  </div>
+                </div>
+              </div>
           );
         })}
         </div>

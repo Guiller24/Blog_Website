@@ -1,11 +1,10 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { useCustomNavigate } from '../navigation/CustomNavigate';
-import userService from '../api/js-api/userService';
-import { Card } from 'primereact/card';
-import { Password } from 'primereact/password';
 import { InputText } from 'primereact/inputtext';
-import { Button } from 'primereact/button';
+import { Password } from 'primereact/password';
 import { Toast } from 'primereact/toast';
+import React, { useEffect, useRef, useState } from 'react';
+import userService from '../api/js-api/userService';
+import { useCustomNavigate } from '../navigation/CustomNavigate';
+import '../styles/create-account.css';
 export const CreateAccount = () => {
     const [ firstName, setFirstName ] = useState("");
     const [ lastName, setLastName ] = useState("");
@@ -53,27 +52,36 @@ export const CreateAccount = () => {
 
   return (
     <div className='createAccountContainer'>
-        <form className="createAccountForm" onSubmit={createUser}>
-            <Card title="Create Account" className='createNewAccount'>
-            <label htmlFor="firstname">First Name:</label>
-            <InputText value={firstName} id='firstname' placeholder="First Name..." onChange={(e) => {setFirstName(e.target.value)}} required/>
-            <label htmlFor="lastName">Last Name:</label>
-            <InputText value={lastName} id='lastname' placeholder="Last Name..." onChange={(e) => {setLastName(e.target.value)}}  required/>
-            <label htmlFor="email">Email:</label>
-            <InputText value={email} id='email' placeholder="sample@example.com..." onChange={(e) => {setEmail(e.target.value)}} required/> 
-            <label htmlFor="contactNum">Contact Number:</label>
-            <InputText value={contactNum} id='contactNum' placeholder="09xxxxxxxxx..." onChange={(e) => {setContactNum(e.target.value)}} required/>
-            <label htmlFor="address">Adress:</label>
-            <InputText value={address} id='address' placeholder="Street, Municipality, Province..." onChange={(e) => {setAddress(e.target.value)}} required/>
-            <label htmlFor="password">Password:</label>
-            <Password value={password} id='password' placeholder="Password..." onChange={(e) => {setPassword(e.target.value)}} required/>
-            <label htmlFor="confirm">Confirm Password:</label>
-            <Password value={confirm} id='confirm' styleClass='w-full' placeholder="Confirm Password..." onChange={(e) => {setConfirm(e.target.value)}} required/>
-            <div className='submitcontainer'>
-            <Button type="submit" label="Submit" severity="secondary" />
+        <Toast ref={toast} position="top-right" />
+        <form className="form" onSubmit={createUser}>
+            <p className="form-title">Create a new account</p>
+            <div className="input-container">
+                <InputText className='p-inputtext-lg' placeholder='First Name...' value={firstName} onChange={(e) => setFirstName(e.target.value)} />
             </div>
-            </Card>
-        </form>
+            <div className="input-container">
+                <InputText className='p-inputtext-lg' placeholder='Last Name...' value={lastName} onChange={(e) => setLastName(e.target.value)} />
+            </div>
+            <div className="input-container">
+                <InputText className='p-inputtext-lg' placeholder='Email...' value={email} onChange={(e) => setEmail(e.target.value)} />
+            </div>
+            <div className="input-container">
+                <InputText className='p-inputtext-lg' placeholder='Contact Number' value={contactNum} onChange={(e) => setContactNum(e.target.value)} />
+            </div>
+            <div className="input-container">
+                <InputText className='p-inputtext-lg' placeholder='Address' value={address} onChange={(e) => setAddress(e.target.value)} />
+            </div>
+            <div className="input-container">
+                <Password className='p-inputtext-lg' placeholder='Password...' value={password} onChange={(e) => setPassword(e.target.value)} />
+            </div>
+            <div className="input-container">
+                <Password className='p-inputtext-lg' placeholder='Confirm password...' value={confirm} onChange={(e) => setConfirm(e.target.value)} />
+            </div>
+            <button type="submit" class="submit">Sign up</button>
+            <p className="signup-link">
+                Already have an account? 
+                <a onClick={navToLogin}>Sign in</a>
+            </p>
+            </form>
     </div>
 
   )

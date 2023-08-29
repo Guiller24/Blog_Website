@@ -5,7 +5,7 @@
   --secondary: #FFFFFF;
   --accent: #FF5722;
   --background: #F5F5F5;
-  --sidebar:  #AAAAAA;
+  --background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg clip-path='url(%26quot%3b%23SvgjsClipPath1480%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(255%2c 255%2c 255%2c 1)'%3e%3c/rect%3e%3ccircle r='93.335' cx='18.9' cy='-73.58' stroke='%23007bff' stroke-opacity='1' stroke-width='2'%3e%3c/circle%3e%3ccircle r='93.335' cx='393.55' cy='373.13' stroke='%23007bff' stroke-opacity='1' stroke-width='2'%3e%3c/circle%3e%3ccircle r='93.335' cx='690.99' cy='664.26' stroke='%23007bff' stroke-opacity='1' stroke-width='2'%3e%3c/circle%3e%3ccircle r='103.54' cx='341.53' cy='101.04' stroke='%23007bff' stroke-opacity='1' stroke-width='2'%3e%3c/circle%3e%3ccircle r='68.79' cx='810.26' cy='284.45' stroke='%23007bff' stroke-opacity='1' stroke-width='2'%3e%3c/circle%3e%3ccircle r='105.25' cx='442.91' cy='538.83' stroke='%23007bff' stroke-opacity='1' stroke-width='2'%3e%3c/circle%3e%3ccircle r='84.745' cx='354.99' cy='120.72' stroke='%23007bff' stroke-opacity='1' stroke-width='2'%3e%3c/circle%3e%3ccircle r='51.05' cx='260.35' cy='365.01' stroke='%23007bff' stroke-opacity='1' stroke-width='2'%3e%3c/circle%3e%3ccircle r='156.255' cx='478.33' cy='14.24' stroke='%23007bff' stroke-opacity='1' stroke-width='2'%3e%3c/circle%3e%3ccircle r='133.855' cx='1294.26' cy='540.19' stroke='%23007bff' stroke-opacity='1' stroke-width='2'%3e%3c/circle%3e%3ccircle r='55.475' cx='1014.41' cy='62.39' stroke='%23007bff' stroke-opacity='1' stroke-width='2'%3e%3c/circle%3e%3ccircle r='97.845' cx='878.25' cy='121.92' stroke='%23007bff' stroke-opacity='1' stroke-width='2'%3e%3c/circle%3e%3ccircle r='68.845' cx='1143.71' cy='108.02' stroke='%23007bff' stroke-opacity='1' stroke-width='2'%3e%3c/circle%3e%3ccircle r='55.77' cx='989.57' cy='248.02' stroke='%23007bff' stroke-opacity='1' stroke-width='2'%3e%3c/circle%3e%3ccircle r='56.88' cx='405.43' cy='79.19' stroke='%23007bff' stroke-opacity='1' stroke-width='2'%3e%3c/circle%3e%3c/g%3e%3cdefs%3e%3cclipPath id='SvgjsClipPath1480'%3e%3crect width='1440' height='560' x='0' y='0'%3e%3c/rect%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e");
 
   /* Text Colors */
   --primary-text-color: #333333;
@@ -19,72 +19,13 @@
   --alternate-heading-font: "Montserrat", sans-serif;
   --alternate-body-font: "Lato", sans-serif;
 }
+::-webkit-scrollbar{
+  display: none;
+}
 body {
   margin: 0;
   font-family: var(--body-font);
 }
-/* Nav Bar */
-nav{
-  width: 100%;
-  height: 50px;
-  position: sticky;
-  top:0;
-  z-index: 100;
-  background: var(--secondary);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-.logo{
-  font-family: var(--heading-font);
-  color: var(--primary-text-color);
-  font-style: italic;
-  font-weight: 900;
-  margin: 0 50% 0 0;
-  cursor:default ;
-}
-.nav-btn{
-  text-decoration: none;
-  color: var(--secondary-text-color);
-  margin: 0 20px;
-  font: 20px var(--alternate-heading-font);
-  position:relative;
-}
-.nav-btn::after{
-  content: '';
-  height: 2px;
-  width: 0;
-  background-color: var(--secondary-text-color);
-  position: absolute;
-  left:0;
-  bottom:-8px;
-  transition: all 0.4s;
-  pointer-events:none;
-}
-.nav-btn:hover::after, .nav-btn:focus::after{ width: 100%; }
-.logout{
-  all: unset;
-  cursor: pointer;
-  background: #606060;
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 50px;
-}
-/* End of Nav Bar */
-
-/* Header */
-.headerCard{
-  width: 80%;
-  margin: 10px auto;
-  background: var(--background);
-}
-
-.headerCard p{
-  color: var(--secondary-text-color);
-  font-size: 25px;
-}
-/* End of Header */
 
 /* Login Page */
 .login-page{
@@ -96,112 +37,20 @@ nav{
   align-items: center;
 }
 
-.googleContainer{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.login-comp{
-  width: fit-content;
-  height: fit-content;
-
-}
-
-.createPostPage{
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top:20px;
-  
-}
-.cpContainer{
-  background: #999999;
-  height:100vh;
-  border-radius: 20px;
-  width: 100%;
-}
-.topComp{
-  display: flex;
-  flex-flow: row wrap;
-}
-.cpContainer .cTitle, .cHeadline{
-  width: 90%;
-  outline: none;
-}
-.p-inputtextarea{
-  width: 100%;
-  height: 700px;
-}
-
-.loginForm{
-  display: flex;
-  flex-direction: column;
-
-}
-#email, #password, #confirm, #firstname, #lastname, #contactNum, #address{
-  margin: 20px 0;
-}
-.normalLoginButton{
-  cursor: pointer;
-  padding: 5px 16px;
-  border: none;
-  border-radius: 20px;
-  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.25);
-  color: #757575;
-  font-size: 20px;
-  font-weight: 500;
-  background-color: white;
-  background-repeat: no-repeat;
-  background-position: 12px 11px;
-  display: flex;
-
-  justify-content: center;
-}
-/* End of Login Page */
-
 /* Create Account Page */
 .createAccountContainer {
   display: flex;
+  margin: 5% 0 0 0;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
 
-.createAccountForm {
-  width: 500px;
-}
-
-.createNewAccount {
-  padding: 20px;
-}
-
-.createNewAccount label {
-  display: inline-block; 
-  width: 35%; 
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-
-.submitcontainer {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.submit {
-  width: 150px;
-}
-
-/* End of Create Account Page*/
 .inputGroup{
   display: flex;
   flex-direction: column;
   margin: 1%;
 }
 
-.title{
+/* .title{
   width: 100%;
   padding: 12px 20px;
   outline: none;
@@ -211,7 +60,7 @@ nav{
   background-color: #f8f8f8;
   font-size: 16px;
   resize: none;
-}
+} */
 
 .post{
   width: 100%;
@@ -237,21 +86,15 @@ nav{
   cursor: pointer;
   justify-self: flex-end;
 }
-
-.homepage{
+/* Home Page*/
+/* .homepage{
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   
 }
-.cardContainer{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Three columns */
-  gap: 10px;
-  width: 80vw;
-  margin-top: 20px;
-}
+
 
 .postCard{
   padding: 10px;
@@ -271,16 +114,18 @@ nav{
   padding: 10px;
 }
 
-.deleteBtn{
-  border: none;
-  cursor: pointer;
-}
+
 .divMargin{
   display: flex;
   margin-bottom: 20%;
-}
-.titles{
+} */
+/* End of Home Page*/
+/* .titles{
   margin: 0 70% 0 0;
+}
+.deleteBtn{
+  border: none;
+  cursor: pointer;
 }
 
 .menuBtn {
@@ -292,9 +137,9 @@ nav{
 
 .postHeader{
   display: flex;
-}
+} */
 
-.viewPostPage {
+/* .viewPostPage {
   display: flex;
   width: calc(100% - 300px);
   margin-left: 300px;
@@ -340,7 +185,7 @@ nav{
 .postDate {
   margin-top: 10px;
   color: var(--secondary-text-color);
-}
+}*/
 
 .spacer{
   flex:1;

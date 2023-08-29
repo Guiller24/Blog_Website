@@ -1,11 +1,10 @@
+import { InputText } from 'primereact/inputtext';
+import { Password } from 'primereact/password';
 import React, { useEffect, useState } from 'react';
 import AuthenticateUser from "../api/js-api/AuthenticateUser";
 import { useCustomNavigate } from "../navigation/CustomNavigate";
-import { Card } from 'primereact/card'
-import { Divider } from 'primereact/divider';
-import { InputText } from 'primereact/inputtext';
-import { Button } from 'primereact/button';
-import { Password } from 'primereact/password';
+import '../styles/login.css';
+
 function Login({ isAuth, setIsAuth }) {
 
     const [ email, setEmail ] = useState("");
@@ -36,25 +35,22 @@ function Login({ isAuth, setIsAuth }) {
     });
 
     return (
-        
-        <div className='login-page'>
-            <div className="login-container">
-                <Card title='Login' >
-                <div className="emailLoginContainer">
-                    <form className="loginForm">
-                        <label htmlFor="email">Email:</label>
-                        <InputText id='email' className='p-inputtext-lg' value={email} onChange={(e) => setEmail(e.target.value)} />
-                        <label htmlFor="password">Password:</label>
-                        <Password id='password' className='p-inputtext-lg' value={password} onChange={(e) => setPassword(e.target.value)} />
-                        <Button label="Log in" severity="secondary" outlined onClick={handleLogin}/>
-                    </form>
-                </div>
-                <Divider className='divider' />
-                <div className="googleContainer">
-                    <Button label='Create New Account' severity='secondary' text onClick={navToCreateAccount} />
-                </div>
-                </Card>
+       
+        <div className='login-page'>        
+        <form className="form" onSubmit={handleLogin}>
+            <p className="form-title">Sign in to your account</p>
+            <div className="input-container">
+                <InputText className='p-inputtext-lg' placeholder='Email...' value={email} onChange={(e) => setEmail(e.target.value)} />
             </div>
+            <div className="input-container">
+                <Password className='p-inputtext-lg' placeholder='Password...' value={password} onChange={(e) => setPassword(e.target.value)} />
+            </div>
+            <button type="submit" class="submit">Sign in</button>
+            <p className="signup-link">
+                No account? 
+                <a onClick={navToCreateAccount}>Sign up</a>
+            </p>
+            </form>
         </div>
     )
 }

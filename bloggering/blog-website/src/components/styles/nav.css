@@ -1,0 +1,105 @@
+
+nav {
+    width: 100%;
+    height: 60px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--secondary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.9);
+  }
+  
+  .logo {
+    font-family: var(--heading-font);
+    color: var(--primary-text-color);
+    font-style: italic;
+    font-weight: 900;
+    margin-left: 20px; 
+    cursor: pointer; 
+  }
+ 
+  
+  .nav-btn {
+    text-decoration: none;
+    color: var(--secondary-text-color);
+    font: 16px var(--alternate-heading-font);
+    margin: 0 15px; 
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+
+  .nav-btn::after {
+    content: '';
+    height: 2px;
+    width: 0;
+    background-color: var(--primary);
+    position: absolute;
+    left: 0;
+    bottom: -6px; 
+    transition: width 0.4s ease; 
+    pointer-events: none;
+  }
+  
+  .nav-btn:hover::after,
+  .nav-btn:focus::after {
+    width: 100%;
+  }
+  
+  .logout {
+    all: unset;
+    cursor: pointer;
+    background: var(--secondary); 
+    color: var(--primary-text-color); 
+    padding: 5px 15px;
+    border-radius: 30px; 
+    transition: background 0.3s ease, color 0.3s ease; 
+  }
+  
+  .logout:hover {
+    background: var(--primary-text-color); 
+    color: var(--secondary); 
+  }
+  .burger-menu {
+    display: none;
+  }
+  
+  @media (max-width: 768px) {
+    .burger-menu {
+      display: block;
+      cursor: pointer;
+      margin-right: 20px;
+      transition: all 0.3s ease;
+      z-index: 100;
+    }
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      padding: 20px;
+      background: var(--secondary);
+      text-align: center;
+      box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.9);
+      border-radius: 0 0 10px 10px;
+      transition: all 0.3s ease;
+      z-index: 100;
+    }
+    .card{
+      height: 50px;
+    }
+  
+    .nav-links.show {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;      
+    }
+  }
+  

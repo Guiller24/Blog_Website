@@ -4,6 +4,9 @@ import { useParams } from 'react-router-dom';
 import formatDate from '../utils/formatDate';
 import PostMenu from '../common/PostMenu';
 import jwtDecode from 'jwt-decode';
+import '../styles/view-page.css';
+
+
 const PostViewPage = ({ isAuth }) => {
   const { postId } = useParams();
   const [ post, setPost ] = useState("");
@@ -27,7 +30,7 @@ const PostViewPage = ({ isAuth }) => {
   return (
     <div className='viewPostPage'>
       <div className='sidebar'>
-        <h3>Writted By:</h3>
+        <h3>Written By:</h3>
         <h2>{post.author}</h2>
         <p>{formattedDate}</p>
       </div>

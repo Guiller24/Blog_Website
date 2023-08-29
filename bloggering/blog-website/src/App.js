@@ -7,7 +7,7 @@ import jwtDecode from 'jwt-decode';
 import "primereact/resources/themes/bootstrap4-light-blue/theme.css";
 import "primereact/resources/primereact.min.css";     
 import 'primeicons/primeicons.css';                      
-        
+import './components/styles/home.css';
 
 const App = () => {
   const [isAuth, setIsAuth] = useState(false);
